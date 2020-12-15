@@ -1,37 +1,83 @@
 <!DOCTYPE html>
 <body>
   <script>
-    
-  function computerPlay() { //makes the choice for computer selection
-    let computerChoice = Math.floor((Math.random() * 3) + 1 );
 
-    if (computerChoice === 1){
-      return 'ROCK';
-    } else if (computerChoice === 2){
-      return 'PAPER';
-    } else {
-      return 'SCISSORS';
+  
+  function game(){
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function playRound(){  //plays a single round of rock paper scissors
+
+      function computerPlay() { //makes the choice for computer selection
+        let computerChoice = Math.floor((Math.random() * 3) + 1 );
+
+        if (computerChoice === 1){
+          return 'ROCK';
+        } else if (computerChoice === 2){
+          return 'PAPER';
+        } else {
+          return 'SCISSORS';
+        }
+      } 
+
+      const playerSelection = prompt("Rock, Paper, Scissors Shoot!").toUpperCase(); //propmts player to choose and converts to upper case
+      const computerSelection = computerPlay(); //runs computer play to make a selection for the computer
+
+      if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS' ||
+          playerSelection === 'PAPER' && computerSelection === 'ROCK' ||
+          playerSelection === 'SCISSORS' && computerSelection === 'PAPER'){
+            ++playerScore;
+            return playerSelection + " beats " + computerSelection + ". You Win!";
+        } else if (playerSelection === computerSelection){
+            return playerSelection + " ties. " + computerSelection + " Play again.";
+        } else if( playerSelection === 'ROCK' && computerSelection === 'PAPER' ||
+                    playerSelection === 'PAPER' && computerSelection === 'SCISSORS'||
+                    playerSelection === 'SCISSORS' && computerSelection === 'ROCK'){
+                    ++computerScore;
+                    return computerSelection + " beats " + playerSelection + ". You lose.";
+        } else {return "something went wrong.";}
     }
-  }
 
-  function playRound( playerSelection, computerSelection ){  //plays a single round of rock paper scissors
-    if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS' ||
-        playerSelection === 'PAPER' && computerSelection === 'ROCK' ||
-        playerSelection === 'SCISSORS' && computerSelection === 'PAPER'){
-          return playerSelection + ' beats ' + computerSelection + '. You Win!';
-      } else if (playerSelection === computerSelection){
-          return "It is a tie. Play again.";
-      } else if( playerSelection === 'ROCK' && computerSelection === 'PAPER' ||
-                  playerSelection === 'PAPER' && computerSelection === 'SCISSORS'||
-                  playerSelection === 'SCISSORS' && computerSelection === 'ROCK'){
-                  return computerSelection + ' beats ' + playerSelection + '. You Lose.';
-      } else {return "somethign went wrong.";}
-  }
+    function finalScore(playerScore, computerScore){
+      if (playerScore > computerScore){
+          return "YOU WIN! CONGRATULATIONS!";
+      } else if (playerScore == computerScore){
+          return "TIE. CLICK REFRESH TO PLAY AGAIN.";
+      } else if (playerScore < computerScore){
+          return "YOU LOSE. CLICK REFRESH TO PLAY AGAIN.";
+      } else {
+          return "Something went wrong. Check the final score";
+      }
+    }
+        
+        
 
-    const playerSelection = 'paPer'.toUpperCase();
-    const computerSelection = computerPlay();
+        console.log("Round 1");
+          console.log(playRound( ));
+          console.log("Player " + playerScore + " to Computer " + computerScore);
+        console.log(" ");
+        console.log("Round 2");
+          console.log(playRound( ));
+          console.log("Player " + playerScore + " to Computer " + computerScore);
+        console.log(" ");
+        console.log("Round 3");
+          console.log(playRound( ));
+          console.log("Player " + playerScore + " to Computer " + computerScore);
+        console.log(" ");
+        console.log("Round 4");
+          console.log(playRound( ));
+          console.log("Player " + playerScore + " to Computer " + computerScore);
+        console.log(" ");
+        console.log("Round 5");
+          console.log(playRound( ));
+          console.log("Player " + playerScore + " to Computer " + computerScore);
+        console.log(finalScore(playerScore, computerScore))
 
-    console.log(playRound(playerSelection, computerSelection));
+    }
+
+    game();
 
   </script>
 </body>
