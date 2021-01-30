@@ -1,0 +1,102 @@
+body{
+background-image: url(imagesRPS/Woodgrain.jpg);
+background-repeat: no-repeat;
+background-size:130% 130%;
+}
+
+#scoreBoard {
+  margin-top:30px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  
+  min-width: 50%;
+  max-width:60%;
+  min-height: 240px;
+  max-height: 430px;
+  
+  text-align:center;
+
+  font-size: 25px;
+  font-family:Nanum Pen Script;
+
+  background-image: url(imagesRPS/lined-paper.jpg);  
+}
+
+  .scoreBoxes{
+    display: inline-block;
+    width:140px;
+    padding: 0px;
+
+    margin-top: 0px;
+    margin-right:0px;
+    margin-bottom: 0px;
+    margin-left:0px;
+  }
+
+  .scoreReadout{
+    margin: 0px;
+
+    padding-top: 0px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 0px;
+
+    font-size: 45px;
+  }
+
+  #resultsDisplay{
+    margin: 0px;
+
+    padding: 0px;
+  }
+
+    #roundResults{
+      margin: 0px;
+
+      padding:10px;
+    }
+
+    #finalResults{
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+      
+      font-size: 40px;
+    }
+
+#playerChoices{
+  margin-top:12%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+
+  text-align: center;
+}
+
+  .buttons{
+    background-color:transparent;
+    outline: none;
+    border:none;
+    border-radius: 50%;
+    
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+    min-width:62px;
+    max-width: 125px;
+    max-height:62px;
+    max-height: 125px;
+    
+    padding: 0;
+  }
+
+  .buttons:hover{
+    box-shadow: 0 0 15px 10px #3FDED2;
+  }
+
+  #paper{
+    margin-left: 25px;
+    margin-right: 25px;
+  }

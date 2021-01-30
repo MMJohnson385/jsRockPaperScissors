@@ -6,10 +6,9 @@ let computerScore = 0;
   
   const computerScoreBoard = document.querySelector('#computerScoreBoard'); // selects the computerScoreBoard id
   
-const roundResults = document.querySelector('#roundResults');
+const roundResults = document.querySelector('#roundResults'); //connects to the round results div
 
-const finalResults = document.querySelector('#finalResults');
-
+const finalResults = document.querySelector('#finalResults'); //connects to othe final results div
 
 const buttonChoice = document.querySelectorAll('button'); //connects to button class
 
@@ -24,8 +23,7 @@ buttonChoice.forEach((button) =>{
         roundResults.textContent = playRound(button.id.toUpperCase());
       }
     });
-});//returns the id for the button clicked
-
+});//on click checks the score, and feeds the button id as the player selection
 
 function playRound(playerSelection){  //plays a single round of rock paper scissors
   
@@ -39,7 +37,6 @@ function playRound(playerSelection){  //plays a single round of rock paper sciss
       return 'SCISSORS';
     }
   } 
-  //const playerSelection = prompt("Rock, Paper, Scissors Shoot!").toUpperCase(); //propmts player to choose and converts to upper case
 
   const computerSelection = computerPlay(); //runs computer play to make a selection for the computer
 
@@ -49,11 +46,11 @@ function playRound(playerSelection){  //plays a single round of rock paper sciss
 
         ++playerScore; // updates score
         playerScoreBoard.textContent = playerScore.toString(); //updates score board
-        return playerSelection + " beats " + computerSelection + ". \nYou Win!";
+        return playerSelection + " BEATS " + computerSelection + ". YOU WIN!";
 
     } else if (playerSelection === computerSelection){
 
-        return playerSelection + " ties " + computerSelection + " \nPlay again.";
+        return playerSelection + " TIES " + computerSelection + " CHOOSE AGAIN.";
 
     } else if( playerSelection === 'ROCK' && computerSelection === 'PAPER' ||
                 playerSelection === 'PAPER' && computerSelection === 'SCISSORS'||
@@ -61,7 +58,7 @@ function playRound(playerSelection){  //plays a single round of rock paper sciss
 
                 ++computerScore; //updates score
                 computerScoreBoard.textContent = computerScore.toString(); //updates score board
-                return computerSelection + " beats " + playerSelection + ".\n You lose.";
+                return computerSelection + " BEATS " + playerSelection + ". YOU LOSE.";
 
     } else {return "something went wrong.";}
 }
@@ -69,13 +66,11 @@ function playRound(playerSelection){  //plays a single round of rock paper sciss
 
 
 function finalScore(playerScore, computerScore){
-  if (playerScore > computerScore){
-      return "YOU WIN! CONGRATULATIONS! CLICK REFRESH TO PLAY AGAIN.";
-  } else if (playerScore == computerScore){
-      return;
-  } else if (playerScore < computerScore){
-      return "YOU LOSE. CLICK REFRESH TO PLAY AGAIN.";
-  } else {
-      return "Something went wrong. Check the final score";
-  }
+  if (playerScore > computerScore && playerScore == 5){
+        return "YOU WIN! CONGRATULATIONS!";
+    } else if (playerScore < computerScore && computerScore == 5){
+        return "OH NO! YOU LOSE.";
+    } else {  
+        return;
+    }
 }

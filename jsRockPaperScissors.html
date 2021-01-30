@@ -2,7 +2,9 @@
 <head>
 
   <title>Rock Paper Scissors</title>
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styleRPS.css">
 
 </head>
@@ -10,18 +12,18 @@
 <body>
   <div id = "scoreBoard">
 
-    <div id = "playerScore">
-      <p>Player Score:</p>
-        <p id = playerScoreBoard>0</p>
+    <div id = "playerScore" class = "scoreBoxes">
+      <p>Player:</p>
+      <p id = playerScoreBoard class = "scoreReadout">0</p>
     </div>
 
-    <div id = "computerScore">
-      <p>Computer Score:</p>
-        <p id = computerScoreBoard>0</p>
+    <div id = "computerScore" class = "scoreBoxes">
+      <p>Computer:</p>
+      <p id = "computerScoreBoard" class = "scoreReadout">0</p>
     </div>
 
     <div id = "resultsDisplay">
-      <p id = "roundResults"></p>
+      <p id = "roundResults"><br></p>
       <p id = "finalResults"></p>
     </div>
   
@@ -29,11 +31,9 @@
   </div>
 
   <div id = "playerChoices">
-
-    <button id = "rock">ROCK</button>
-    <button id = "paper">PAPER</button>
-    <button id = "scissors">SCISSORS</button>
-  
+    <button id = "rock" class = "buttons"><img src = "imagesRPS/rock.png"></button>
+    <button id = "paper" class = "buttons"><img src = "imagesRPS/paper.png"></button>
+    <button id = "scissors" class = "buttons"><img src = "imagesRPS/scissors.png"></button>
   </div>
   
   <script src = "javascriptRPS.js"></script>
